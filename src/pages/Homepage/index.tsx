@@ -21,7 +21,7 @@ const HomePage = () => {
         // px="16"
         py="96px"
         gap={8}
-        bgColor="#f5f6fa"
+        bgColor="#f0f0f0"
       >
         <Box>
           <Image
@@ -92,7 +92,8 @@ const HomePage = () => {
           </Box>
         </Grid>
       </MainContainer>
-      <MainContainer flexDir={"column"} py="96px">
+
+      <MainContainer flexDir={"column"} py="96px" bgColor="#f0f0f0">
         <Heading textAlign={"center"} mb="8">
           OUR MINISTRIES
         </Heading>

@@ -5,7 +5,7 @@ import {
   DrawerOverlay,
   DrawerContent,
   DrawerCloseButton,
-  DrawerHeader,
+  Link as CLink,
   DrawerBody,
   DrawerFooter,
   Flex,
@@ -13,6 +13,7 @@ import {
 } from "@chakra-ui/react";
 import { Link, useNavigate } from "react-router-dom";
 import { navLinks } from "../../utils/data";
+import { useIsNavActive } from "../../utils/helpers";
 
 interface ISideMenu {
   isOpen: boolean;
@@ -20,6 +21,7 @@ interface ISideMenu {
 }
 const SideMenu = ({ isOpen, onClose }: ISideMenu) => {
   const navigate = useNavigate();
+  const isNavActive = useIsNavActive();
   return (
     <>
       <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
@@ -28,10 +30,21 @@ const SideMenu = ({ isOpen, onClose }: ISideMenu) => {
           <DrawerCloseButton />
           <Heading as="h2">TASC</Heading>
 
-          <DrawerBody mt="4">
+          <DrawerBody mt="4" onClick={onClose}>
             <Flex flexDirection={"column"}>
-              {navLinks.map((el) => (
-                <Link to={el.route}>{el.label}</Link>
+              {navLinks.map((link, idx) => (
+                <CLink
+                  key={idx}
+                  as={Link}
+                  borderBottom={
+                    isNavActive(link.route) ? "2px solid tomato" : ""
+                  }
+                  w="fit-content"
+                  to={link.route}
+                  mb="2"
+                >
+                  {link.label}
+                </CLink>
               ))}
             </Flex>
           </DrawerBody>
@@ -40,7 +53,10 @@ const SideMenu = ({ isOpen, onClose }: ISideMenu) => {
             <Button
               w="full"
               borderRadius="full"
-              onClick={() => navigate("/giving")}
+              onClick={() => {
+                navigate("/giving");
+                onClose();
+              }}
             >
               GIVE
             </Button>

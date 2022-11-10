@@ -41,7 +41,10 @@ const navLinks = [
 const Footer = () => {
   return (
     <MainContainer flexDirection={["column"]} bgColor="#2f3542" py="48px">
-      <Grid templateColumns={"repeat(3,1fr)"} gap={[8]}>
+      <Grid
+        templateColumns={["repeat(1,1fr)", "repeat(1,1fr)", "repeat(3,1fr)"]}
+        gap={[8]}
+      >
         <GridItem>
           <Box>
             <Heading color="white" fontSize={"24px"} fontWeight="500" mb="8">

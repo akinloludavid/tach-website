@@ -16,7 +16,7 @@ import { Carousel1, Carousel2, Carousel3 } from "../../assets";
 
 // Settings for the slider
 const settings = {
-  dots: true,
+  dots: false,
   arrows: false,
   fade: true,
   infinite: true,
@@ -115,10 +115,18 @@ export default function HomepageCarousel() {
             backgroundPosition="center"
             backgroundRepeat="no-repeat"
             backgroundSize="cover"
+            backgroundColor={"rgba(0,0,0,0.4)"}
+            backgroundBlendMode="darken"
             backgroundImage={`url(${card.image})`}
+            h="600px"
           >
             {/* This is the block you need to change, to customize the caption */}
-            <Container size="container.lg" height="600px" position="relative">
+            <Container
+              size="container.lg"
+              height="600px"
+              overflowY={"hidden"}
+              position="relative"
+            >
               <Stack
                 spacing={6}
                 w={"full"}
@@ -127,10 +135,13 @@ export default function HomepageCarousel() {
                 top="50%"
                 transform="translate(0, -50%)"
               >
-                <Heading fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}>
+                <Heading
+                  color="white"
+                  fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}
+                >
                   {card.title}
                 </Heading>
-                <Text fontSize={{ base: "md", lg: "lg" }} color="GrayText">
+                <Text fontSize={{ base: "md", lg: "lg" }} color="white">
                   {card.text}
                 </Text>
               </Stack>

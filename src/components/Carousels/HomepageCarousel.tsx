@@ -84,18 +84,20 @@ export default function HomepageCarousel() {
         aria-label="left-arrow"
         variant="solid"
         position="absolute"
+        bgColor={"tomato"}
         left={side}
         top={top}
         transform={"translate(0%, -50%)"}
         zIndex={2}
         onClick={() => slider?.slickPrev()}
       >
-        <BiLeftArrowAlt size="40px" />
+        <BiLeftArrowAlt size="40px" color="white" />
       </IconButton>
       {/* Right Icon */}
       <IconButton
         aria-label="right-arrow"
         variant="solid"
+        bgColor={"tomato"}
         position="absolute"
         right={side}
         top={top}
@@ -103,7 +105,7 @@ export default function HomepageCarousel() {
         zIndex={2}
         onClick={() => slider?.slickNext()}
       >
-        <BiRightArrowAlt size="40px" />
+        <BiRightArrowAlt size="40px" color="white" />
       </IconButton>
       {/* Slider */}
       <Slider {...settings} ref={(slider) => setSlider(slider)}>

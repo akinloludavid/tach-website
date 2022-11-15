@@ -29,7 +29,7 @@ const AboutPage = () => {
       >
         <Box>
           <Image
-            borderRadius={"32px"}
+            borderRadius={"8px"}
             src={
               "https://images.unsplash.com/photo-1536093058105-e4d1e0c5e525?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Y2h1cmNoJTIwZmFtaWx5fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
             }
@@ -53,19 +53,12 @@ const AboutPage = () => {
           <Heading mb="4">DOCTRINE AND BELIEF</Heading>
           <UnorderedList as="ul" ml="0">
             {doctrines.map((doc, idx) => (
-              <ListItem
-                as="li"
-                key={idx}
-                mb="2"
-                display={"flex"}
-                alignItems="center"
-                gap={4}
-              >
+              <Flex key={idx} mb="4" alignItems="flex-start" gap={[2, 4]}>
                 {/* <AiOutlineCheck size="18px" /> */}
-                <Text w="20px">{idx + 1}</Text>
+                <Text w={["fit-content", "20px"]}>{idx + 1}</Text>
 
-                <Text>{doc}</Text>
-              </ListItem>
+                <Text lineHeight={["30px"]}>{doc}</Text>
+              </Flex>
             ))}
           </UnorderedList>
         </Box>

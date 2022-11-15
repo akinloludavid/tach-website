@@ -16,7 +16,9 @@ export const HeadingStyle = {
     },
 
     primary: {
-      color: "#094063",
+      // color: "#c23616",
+      color: "#2c3e50",
+
       fontSize: "32px",
       fontWeight: "600",
     },

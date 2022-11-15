@@ -1,3 +1,5 @@
+import { Baby, Man, Woman } from "../assets";
+
 export const navLinks = [
   {
     label: "HOME",
@@ -77,5 +79,33 @@ export const churchAdmin = [
     name: "Michael Scotfield",
     email: "michael@mail.com",
     url: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+  },
+];
+
+export const ourMinistries = [
+  {
+    title: "Men's Movment",
+    body: "The purpose of the men's unit is to build strong leaders in faith. Men who are dedicated to God and His work",
+    image: Man,
+  },
+  {
+    title: "Women's Movement",
+    body: "We are that generation that seek The Lord our God. We are women of virtue and it is our mission to help women grow",
+    image: Woman,
+  },
+  {
+    title: "Child Evangelism Unit",
+    body: `Train up a child in the way he should go: and when he is old, he will not depart from it." - Proverbs 22:6. This is our mission`,
+    image: Baby,
+  },
+  {
+    title: "Evangelical Party",
+    body: `Train up a child in the way he should go: and when he is old, he will not depart from it." - Proverbs 22:6. This is our mission`,
+    image: Baby,
+  },
+  {
+    title: "Youths and Witnesses",
+    body: `Train up a child in the way he should go: and when he is old, he will not depart from it." - Proverbs 22:6. This is our mission`,
+    image: Baby,
   },
 ];

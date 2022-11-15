@@ -10,10 +10,13 @@ import {
   DrawerFooter,
   Flex,
   Heading,
+  Text,
 } from "@chakra-ui/react";
 import { Link, useNavigate } from "react-router-dom";
 import { navLinks } from "../../utils/data";
 import { useIsNavActive } from "../../utils/helpers";
+import { MyWavyLink } from "../MyWavyLink";
+import { AnimatedText } from "../Animations";
 
 interface ISideMenu {
   isOpen: boolean;
@@ -26,25 +29,24 @@ const SideMenu = ({ isOpen, onClose }: ISideMenu) => {
     <>
       <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
         <DrawerOverlay />
-        <DrawerContent>
+        <DrawerContent p={4}>
           <DrawerCloseButton />
           <Heading as="h2">TASC</Heading>
 
           <DrawerBody mt="4" onClick={onClose}>
-            <Flex flexDirection={"column"}>
+            <Flex flexDirection={"column"} align="flex-start" gap={2}>
               {navLinks.map((link, idx) => (
-                <CLink
-                  key={idx}
-                  as={Link}
-                  borderBottom={
-                    isNavActive(link.route) ? "2px solid tomato" : ""
-                  }
-                  w="fit-content"
-                  to={link.route}
-                  mb="2"
-                >
-                  {link.label}
-                </CLink>
+                <AnimatedText delay={0.1 * (idx + 1)} key={idx}>
+                  <CLink as={MyWavyLink} w="fit-content" to={link.route}>
+                    <Text
+                      borderBottom={
+                        isNavActive(link.route) ? "2px solid tomato" : ""
+                      }
+                    >
+                      {link.label}
+                    </Text>
+                  </CLink>
+                </AnimatedText>
               ))}
             </Flex>
           </DrawerBody>

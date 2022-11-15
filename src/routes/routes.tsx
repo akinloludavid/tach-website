@@ -1,9 +1,9 @@
 import { lazy } from "react";
-import { Navigate } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 import WithSuspense from "../components/WithSuspense";
 import { AppRoutes } from "../utils/types";
 import { PUBLIC_PATHS } from "./constants";
-
+import { WavyLink } from "react-wavy-transitions";
 const { HOME, ABOUT, CONTACT, EVENTS, GIVING, MINISTRIES, CHURCH_ADMIN } =
   PUBLIC_PATHS;
 

@@ -11,7 +11,6 @@ import {
   MenuList,
   Text,
   UnorderedList,
-  useColorMode,
   useColorModeValue,
 } from "@chakra-ui/react";
 import MainContainer from "../MainContainer";
@@ -21,12 +20,12 @@ import { BiChevronDown } from "react-icons/bi";
 import { MdOutlineMenuOpen } from "react-icons/md";
 import SideMenu from "../SideMenu";
 import { navLinks } from "../../utils/data";
+import { MyWavyLink } from "../MyWavyLink";
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const { colorMode } = useColorMode();
   const isNavActive = useIsNavActive();
-  const { isDesktop } = useCustomMediaQuery();
+  const { isDesktop, isMobile } = useCustomMediaQuery();
   const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
   return (
     <MainContainer bgColor={"white"} align="center" boxShadow={"lg"}>
@@ -56,7 +55,7 @@ const Navbar = () => {
                   // textUnderlineOffset={isNavActive(el.route) ? "-16px" : "0"}
                   // textDecoration={isNavActive(el.route) ? "underline" : "none"}
                 >
-                  <Link to={el.route}>
+                  <MyWavyLink to={el.route}>
                     <Box
                       display="flex"
                       alignItems="center"
@@ -66,7 +65,7 @@ const Navbar = () => {
                         {el.label}
                       </Text>
                     </Box>
-                  </Link>
+                  </MyWavyLink>
                 </Box>
               ))}
               <Menu closeOnSelect isLazy>
@@ -81,7 +80,7 @@ const Navbar = () => {
                   _hover={{}}
                   h="36px"
                 >
-                  About
+                  <Text>About</Text>
                 </MenuButton>
 
                 <MenuList
@@ -90,26 +89,36 @@ const Navbar = () => {
                     "darkMode.secBgColor"
                   )}
                   px="4"
+                  display={"flex"}
+                  flexDirection="column"
+                  alignItems={"flex-start"}
+                  gap={2}
                 >
                   {navLinks.slice(1, 4).map((el, idx) => (
                     <MenuItem
-                      w="100%"
                       key={idx}
-                      m="auto"
+                      // m="auto"
+                      ml="0px"
                       height="100%"
-                      borderRadius="4px"
                       _focus={{
                         bgColor: "inherit",
                       }}
-                      bgColor={isNavActive(el.route) ? "tomato" : "none"}
-                      _hover={{
-                        bgColor: "tomato",
-                        color: "white",
-                      }}
-                      as={Link}
+                      as={MyWavyLink}
                       to={el.route}
+                      w="100%"
                     >
-                      <Text ml="5px" color="inherit">
+                      <Text
+                        w="100%"
+                        // ml="5px"
+                        color="inherit"
+                        borderRadius="4px"
+                        bgColor={isNavActive(el.route) ? "tomato" : "none"}
+                        _hover={{
+                          bgColor: "tomato",
+                          color: "white",
+                        }}
+                        p="2"
+                      >
                         {el.label}
                       </Text>
                     </MenuItem>
@@ -124,7 +133,7 @@ const Navbar = () => {
                   height="100%"
                   borderBottom={isNavActive(el.route) ? "4px solid tomato" : ""}
                 >
-                  <Link to={el.route}>
+                  <MyWavyLink to={el.route}>
                     <Box
                       display="flex"
                       alignItems="center"
@@ -134,7 +143,7 @@ const Navbar = () => {
                         {el.label}
                       </Text>
                     </Box>
-                  </Link>
+                  </MyWavyLink>
                 </Box>
               ))}
             </UnorderedList>
@@ -158,12 +167,14 @@ const Navbar = () => {
           onClick={() => setIsSideMenuOpen(true)}
         />
       )}
-      <SideMenu
-        isOpen={isSideMenuOpen}
-        onClose={() => {
-          setIsSideMenuOpen(false);
-        }}
-      />
+      {isMobile && (
+        <SideMenu
+          isOpen={isSideMenuOpen}
+          onClose={() => {
+            setIsSideMenuOpen(false);
+          }}
+        />
+      )}
     </MainContainer>
   );
 };

@@ -17,19 +17,10 @@ export const customTheme = extendTheme({
   },
   components,
   colors: {
-    pryColor: "#030303",
+    // pryColor: "#c23616",
+    pryColor: "#2c3e50",
     secTextColor: "#5299D3",
-    secBgColor: "#F5FAFE",
-    greenBg: "#54C0A8",
-    white: "#ffffff",
-    inputBg: "#FAFBFC",
-    powderBlue: "#EFFEFE",
-    beryl: "#BEE3E6",
-    alexandrite: "#107BC0",
-    diamond: "#97C2E5",
-    danger: "#AB0404",
-    darkBg: "#00213C",
-    secPowderBlue: "#C0E5E5",
+    light: "#f0f0f0",
   },
 });
 

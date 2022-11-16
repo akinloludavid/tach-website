@@ -1,4 +1,13 @@
-import { Baby, Man, Woman } from "../assets";
+import {
+  Baby,
+  Children,
+  Evangelism,
+  Man,
+  Men,
+  Woman,
+  Women,
+  Youth,
+} from "../assets";
 
 export const navLinks = [
   {
@@ -107,5 +116,33 @@ export const ourMinistries = [
     title: "Youths and Witnesses",
     body: `Train up a child in the way he should go: and when he is old, he will not depart from it." - Proverbs 22:6. This is our mission`,
     image: Baby,
+  },
+];
+
+export const ourMinistriesPage = [
+  {
+    title: "Men's Movment",
+    body: "The purpose of the men's unit is to build strong leaders in faith. Men who are dedicated to God and His work",
+    image: Men,
+  },
+  {
+    title: "Women's Movement",
+    body: "We are that generation that seek The Lord our God. We are women of virtue and it is our mission to help women grow",
+    image: Women,
+  },
+  {
+    title: "Child Evangelism Unit",
+    body: `Train up a child in the way he should go: and when he is old, he will not depart from it." - Proverbs 22:6. This is our mission`,
+    image: Children,
+  },
+  {
+    title: "Evangelical Party",
+    body: `Train up a child in the way he should go: and when he is old, he will not depart from it." - Proverbs 22:6. This is our mission`,
+    image: Evangelism,
+  },
+  {
+    title: "Youths and Witnesses",
+    body: `Train up a child in the way he should go: and when he is old, he will not depart from it." - Proverbs 22:6. This is our mission`,
+    image: Youth,
   },
 ];

@@ -19,6 +19,11 @@ import { AiOutlineCheck } from "react-icons/ai";
 const AboutPage = () => {
   return (
     <>
+      <MainContainer>
+        <Heading fontSize={"48px"} fontWeight={"semibold"}>
+          About Us
+        </Heading>
+      </MainContainer>
       <MainContainer
         flexDirection={["column", "column", "row"]}
         alignItems="center"
@@ -48,22 +53,30 @@ const AboutPage = () => {
           </Text>
         </Box>
       </MainContainer>
-      <MainContainer flexDirection={"column"}>
-        <Box mt="8">
+      <MainContainer
+        flexDirection={"column"}
+        bgRepeat="no-repeat"
+        bgColor={"rgba(255,255,255,0.6)"}
+        backgroundBlendMode="lighten"
+        bgPosition={["center", "right"]}
+        backgroundSize="cover"
+        bgImage={`url(https://images.unsplash.com/photo-1457139621581-298d1801c832?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGNocmlzdGlhbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60)`}
+      >
+        <Box py="48px">
           <Heading mb="4">DOCTRINE AND BELIEF</Heading>
-          <UnorderedList as="ul" ml="0">
-            {doctrines.map((doc, idx) => (
-              <Flex key={idx} mb="4" alignItems="flex-start" gap={[2, 4]}>
-                {/* <AiOutlineCheck size="18px" /> */}
-                <Text w={["fit-content", "20px"]}>{idx + 1}</Text>
-
-                <Text lineHeight={["30px"]}>{doc}</Text>
-              </Flex>
+          <Flex flexDir={"column"} gap={4}>
+            {doctrines.map((el, idx) => (
+              <Text key={idx} w={["100%", "70%"]}>
+                <Text as="span" mr="2" fontWeight={"semibold"}>
+                  {idx + 1}.
+                </Text>
+                {el}
+              </Text>
             ))}
-          </UnorderedList>
+          </Flex>
         </Box>
       </MainContainer>
-      <MainContainer py="48px" flexDir={"column"} mt="8" bgColor="#f0f0f0">
+      <MainContainer py="48px" flexDir={"column"} bgColor="#f0f0f0">
         <Heading mb="4">CHURCH ADMINISTRATION</Heading>
 
         <Grid

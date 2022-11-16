@@ -9,7 +9,7 @@ const Loader = () => {
       alignItems="center"
       sx={{ width: "100%", height: "100vh" }}
     >
-      <CircularProgress isIndeterminate color="lightMode.pryColor" />
+      <CircularProgress isIndeterminate color="pryColor" />
     </Box>
   );
 };

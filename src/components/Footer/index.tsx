@@ -68,7 +68,12 @@ const Footer = () => {
             <Heading color="white" fontSize={"24px"} fontWeight="500" mb="8">
               Menu
             </Heading>
-            <UnorderedList ml="0" display={"flex"} flexDirection="column">
+            <UnorderedList
+              ml="0"
+              display={"flex"}
+              flexDirection="column"
+              gap={4}
+            >
               {navLinks.map((link, idx) => (
                 <CLink
                   w="fit-content"
@@ -93,19 +98,19 @@ const Footer = () => {
               </Heading>
             </AnimatedText>
             <AnimatedText delay={0.4}>
-              <Flex align={"center"} gap={4} mb="2">
+              <Flex align={"center"} gap={4} mb="4">
                 <MdOutlineLocationOn color="#fff" size={"24"} />
                 <Text color="#fff">124 Oloto Street, Yaba, Lagos</Text>
               </Flex>
-              <Flex align={"center"} gap={4} mb="2">
+              <Flex align={"center"} gap={4} mb="4">
                 <BsGlobe2 color="#fff" size={"24"} />
                 <Text color="#fff">www.tacsla.org</Text>
               </Flex>
-              <Flex align={"center"} gap={4} mb="2">
+              <Flex align={"center"} gap={4} mb="4">
                 <AiOutlineMail color="#fff" size={"24"} />
                 <Text color="#fff">tacsla@tacsla.com</Text>
               </Flex>
-              <Flex align={"center"} gap={4} mb="2">
+              <Flex align={"center"} gap={4} mb="4">
                 <MdPhone color="#fff" size={"24"} />
                 <Text color="#fff" as="a" href="tel: +2348023332862">
                   08023332862

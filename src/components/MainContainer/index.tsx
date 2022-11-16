@@ -7,7 +7,14 @@ interface IMainContainer extends FlexProps {
 }
 const MainContainer = ({ children, ...rest }: IMainContainer) => {
   return (
-    <Flex px={["18px", "30px", "60px"]} py={["20px"]} {...rest}>
+    <Flex
+      maxW={"1440px"}
+      w="100vw"
+      mx="auto"
+      px={["18px", "30px", "60px"]}
+      py={["20px"]}
+      {...rest}
+    >
       {children}
     </Flex>
   );

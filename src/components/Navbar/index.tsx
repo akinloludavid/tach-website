@@ -3,7 +3,6 @@ import {
   Box,
   Button,
   Flex,
-  Heading,
   Image,
   Menu,
   MenuButton,
@@ -14,13 +13,14 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import MainContainer from "../MainContainer";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useCustomMediaQuery, useIsNavActive } from "../../utils/helpers";
 import { BiChevronDown } from "react-icons/bi";
 import { MdOutlineMenuOpen } from "react-icons/md";
 import SideMenu from "../SideMenu";
 import { navLinks } from "../../utils/data";
 import { MyWavyLink } from "../MyWavyLink";
+import { Logo } from "../../assets";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -28,13 +28,16 @@ const Navbar = () => {
   const { isDesktop, isMobile } = useCustomMediaQuery();
   const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
   return (
-    <MainContainer bgColor={"white"} align="center" boxShadow={"lg"}>
-      <Flex justify={"space-between"} w="full">
-        <Flex>
-          <Heading as="h1" cursor={"pointer"} onClick={() => navigate("/")}>
-            Logo
-          </Heading>
-        </Flex>
+    <MainContainer w="100%" bgColor={"white"} align="center" boxShadow={"lg"}>
+      <Flex justify={"space-between"} align="center" w="100%">
+        <Image
+          src={Logo}
+          alt="The apostolic church logo"
+          cursor={"pointer"}
+          onClick={() => navigate("/")}
+          h={["40px", "60px", "60px", "50px"]}
+          w={["30%", "40%", "20%", "10%"]}
+        />
 
         {!isDesktop && (
           <>
